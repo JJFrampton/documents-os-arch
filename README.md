@@ -72,14 +72,6 @@ ENTER
 +50G
 8304
 ```
-root #2
-```
-Command: n
-ENTER
-ENTER
-+50G
-8304
-```
 home (8302)
 ```
 Command: n
@@ -87,6 +79,14 @@ ENTER
 ENTER
 +50G
 8302
+```
+root 2
+```
+Command: n
+ENTER
+ENTER
++50G
+8304
 ```
 home 2
 ```
