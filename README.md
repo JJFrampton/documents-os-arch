@@ -96,7 +96,7 @@ ENTER
 +50G
 8302
 ```
-data
+data (8300)
 ```
 Command: N
 ENTER
