@@ -114,3 +114,36 @@ mkfs.ext4 /dev/sda5
 mkfs.ext4 /dev/sda6
 mkfs.ext4 /dev/sda7
 ```
+### mount partitions
+```
+swapon /dev/sda2
+mount /dev/sda3 /mnt
+mkdir /mnt/{boot,home}
+mount /dev/sda1 /mnt/boot
+mount /dev/sda4 /mnt/home
+```
+confirm with
+```lsblk```
+
+## Installation
+Update the system clock
+```timedatectl set-ntp true```
+Install Arch packages
+```pacstrap /mnt base base-devel openssh linux linux-firmware neovim```
+Generate fstab file
+```genfstab -U /mnt >> /mnt/etc/fstab```
+
+## Configure
+```arch-chroot /mnt```
+uncomment en_US.UTF-8 UTF-8 in /etc/locale.gen
+```locale-gen```
+add the following to /etc/locale.conf
+```
+LANG=en_US.UTF-8
+LANGUAGE=en_US
+LC_ALL=C
+```
+add the following to /etc/vconsole.conf
+```KEYMAP=us```
+timezone
+```timedatectl set-timezone MST```
